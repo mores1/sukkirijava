@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class SumWhile {
+class SumFor {
   public static void main(String[] args) {
     Scanner stdIn = new Scanner(System.in);
     System.out.println("1～入力値までの総和を求めます");
@@ -8,10 +8,9 @@ class SumWhile {
     int n = stdIn.nextInt();
 
     int sum = 0;
-    int i = 1;
-    while (i <= n) {
+
+    for (int i = 1; i <= n; i++) {
       sum += i;
-      i++;
     }
     System.out.println("1～" + n + "までの総和は" + sum + "です。");
   }
