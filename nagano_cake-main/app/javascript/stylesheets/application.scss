@@ -1,0 +1,43 @@
+@import '~bootstrap/scss/bootstrap';
+
+ .table-bordered thead th {
+  border: 1.5px solid black;
+ }
+
+ .table-bordered tbody td {
+  border: 1.5px solid black;
+ }
+
+ .table-bordered th {
+  border: 1.5px solid black;
+ }
+
+ .table-bordered td {
+  border: 1.5px solid black;
+ }
+
+ .field_border {
+  border: 1.5px solid black;
+ }
+
+ .registered_address_btn select {
+  border: 1.5px solid black;
+  width: 100%;
+  height: 30px;
+ }
+
+ .btn--shadow {
+  -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+ }
+
+ .btn--circle:hover {
+  -webkit-transform: translate(0, 3px);
+  transform: translate(0, 3px);
+  -webkit-box-shadow: 0 2px 0 #e6d900;
+  box-shadow: 0 2px 0 shadow;
+ }
+
+ .table-bordered  {
+  border: 1.5px solid black;
+ }

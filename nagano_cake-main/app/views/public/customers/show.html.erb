@@ -1,0 +1,61 @@
+<div class="container-fluid">
+  <div class="row offset-md-2">
+    <h4 class="mb-4"><mark class="bg-light">マイページ</mark></h4>
+  </div>
+
+  <div class="form-group row ml-3">
+    <h4 class ="ml-3">
+      <strong>登録情報</strong>
+    </h4>
+    <div class="col-2 ml-4">
+      <%= link_to "編集する", edit_customers_path, class: "btn btn-success form-control"%>
+    </div>
+  </div>
+
+  <div class="row mb-2 ml-3">
+    <div class="col-6">
+      <table class="table table-bordered">
+        <tbody>
+          <tr>
+            <td class="col-3 table-secondary">氏名</td>
+            <td><%= @customers.full_name %></td>
+          </tr>
+          <tr>
+            <td class="table-secondary">カナ</td>
+            <td><%= @customers.last_name_kana + " " + @customers.first_name_kana %></td>
+          </tr>
+          <tr>
+            <td class="table-secondary">郵便番号</td>
+            <td><%= @customers.postal_code %></td>
+          </tr>
+          <tr>
+            <td class="table-secondary">住所</td>
+            <td><%= @customers.address %></td>
+          </tr>
+          <tr>
+            <td class="table-secondary">電話番号</td>
+            <td><%= @customers.telephone_number %></td>
+          </tr>
+          <tr>
+            <td class="table-secondary">メールアドレス</td>
+            <td><%= @customers.email %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="form-group row ml-3">
+    <h4 class="ml-3"><strong>配送先</strong></h4>
+    <div class="col-2 ml-5">
+      <%= link_to "一覧を見る", addresses_path, class: "btn btn-primary form-control"%>
+    </div>
+  </div>
+
+  <div class="form-group row ml-3">
+    <h4 class="ml-3"><strong>注文履歴</strong></h4>
+    <div class="col-2 ml-4">
+      <%= link_to "一覧を見る", orders_path, class: "btn btn-primary form-control"%>
+    </div>
+  </div>
+</div>

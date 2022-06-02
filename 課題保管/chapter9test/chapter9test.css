@@ -1,0 +1,66 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.header-color {
+  height: 50px;
+  background-color: #ff9a4b;
+}
+
+.content1 {
+  margin: 50px auto;
+  display: flex;
+  justify-content: center;
+}
+
+.content-box1 {
+  width: 300px;
+  background-color: grey;
+}
+
+.content-box1:nth-child(2) {
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.img1 {
+  margin: 10px;
+  width: 280px;
+  height: 150px;
+  background-size: cover;
+  background-position: center;
+  background-image: url("C:/Users/fmsk/OneDrive/デスクトップ/chapter9test/img/flow01.png");
+}
+
+.img2 {
+  margin: 10px;
+  width: 280px;
+  height: 150px;
+  background-size: cover;
+  background-position: center;
+  background-image: url("C:/Users/fmsk/OneDrive/デスクトップ/chapter9test/img/flow02.png");
+}
+
+.img3 {
+  margin: 10px;
+  width: 280px;
+  height: 150px;
+  background-size: cover;
+  background-position: center;
+  background-image: url("C:/Users/fmsk/OneDrive/デスクトップ/chapter9test/img/flow03.png");
+}
+
+footer {
+  height: 50px;
+  background-color: grey;
+}
+
+.h3 {
+  padding-top: 15px;
+}
+
+.p {
+  padding: 5px;
+}

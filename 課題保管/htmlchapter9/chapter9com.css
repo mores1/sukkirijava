@@ -1,0 +1,86 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  height: 50px;
+  background-color: #ff9a4b;
+}
+
+main {
+  width: 960px;
+  margin: 50px auto;
+  display: flex;
+}
+
+.step-box {
+  width: 300px;
+  margin-right: 30px;
+  padding: 10px;
+  position: relative;
+  background-color: #eee;
+}
+
+.step-img1 {
+  height: 150px;
+  background-image: url("C:/Users/fmsk/OneDrive/デスクトップ/chapter10/img/flow01.png");
+  background-position: bottom;
+  background-size: cover;
+}
+
+.step-img2 {
+  height: 150px;
+  background-image: url("C:/Users/fmsk/OneDrive/デスクトップ/chapter10/img/flow02.png");
+  background-position: bottom;
+  background-size: cover;
+}
+
+.step-img3 {
+  height: 150px;
+  background-image: url("C:/Users/fmsk/OneDrive/デスクトップ/chapter10/img/flow03.png");
+  background-position: bottom;
+  background-size: cover;
+}
+
+.step-num {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #ff9a4b;
+  color: #fff;
+}
+
+.title {
+  margin: 15px 0 5px;
+}
+
+footer {
+  height: 50px;
+  background-color: #aaa;
+}
+
+@media screen and (max-width: 768px) {
+  main {
+    display: block;
+    width: 100%;
+  }
+
+  .step-box {
+    width: 90%;
+    margin: 20px auto;
+  }
+
+  .step-img1 {
+    height: 150px;
+  }
+
+  .step-img2 {
+    height: 150px;
+  }
+
+  .step-img3 {
+    height: 150px;
+  }
+}

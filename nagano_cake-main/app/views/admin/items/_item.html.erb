@@ -1,0 +1,40 @@
+      <div class="form-group row justify-content-center">
+        <%= f.label :商品画像, class: "col-md-2 control-label" %>
+        <div class="col-6">
+         <%= f.file_field :image_id, accept: "image/*" %>
+        </div>
+      </div>
+      <div class="form-group row justify-content-center">
+        <%= f.label :商品名, class: "col-md-2 control-label" %>
+        <div class="col-6">
+          <%= f.text_field :name, placeholder: "商品名", class: "form-control" %>
+        </div>
+      </div>
+      <div class="form-group row justify-content-center">
+        <%= f.label :商品説明, class: "col-md-2 control-label" %>
+        <div class="col-6">
+          <%= f.text_area :introduction, placeholder: "ここに説明文を記述します", class: "form-control"%>
+        </div>
+      </div>
+      <div class="form-group row justify-content-center">
+        <%= f.label :ジャンル, class: "col-md-2 control-label" %>
+        <div class="col-6">
+          <%= f.collection_select :genre_id, @genres, :id, :name, include_blank: "----", class: "form-control" %>
+        </div>
+      </div>
+      <div class="form-group row justify-content-center">
+        <%= f.label :税抜価格, class: "col-md-2 control-label" %>
+        <div class="col-6">
+          <%= f.text_field :price, placeholder: "1000", class: "form-control"%>
+        </div>
+        <span>円</span>
+      </div>
+      <div class="form-group row justify-content-center">
+        <%= f.label :販売ステータス, class: "col-md-3 control-label" %>
+        <div class="col-5">
+         <%= f.radio_button :is_active, 'true' %>
+         <%= f.label :is_active, '販売中', value: true %>
+         <%= f.radio_button :is_active, 'false' %>
+         <%= f.label :is_active, '販売停止中', value: false %>
+        </div>
+      </div>

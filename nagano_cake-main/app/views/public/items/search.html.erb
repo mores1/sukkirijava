@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <div class="col-3">
+      <%= render 'genre_search', genres: @genres %>
+    </div>
+
+    <div class="col-9">
+      <div class="d-flex flex-wrap align-items-center">
+        <div><h3 class="font-weight-bold"><%= @genre.name %>一覧</h3></div>
+        <div><span>（全<%= Item.where(genre_id: params[:item_id]).where(is_active: 1).count %>件）</span></div>
+      </div>
+
+      <div class="items d-flex flex-wrap align-content-stretch">
+      <% @items.each do |item| %>
+        <div class="item-box card border-0 w-25 p-3">
+          <%= link_to item_path(item) do %>
+            <%= image_tag item.get_image_id, size: "100x100", class: "card-img-top" %>
+            <p class="card-title text-dark"><%= item.name %></p>
+          <% end %>
+          <p>￥<%= item.price.to_s(:delimited) %></p>
+        </div>
+      <% end %>
+      </div>
+      <div class="d-flex justify-content-center">
+        <%= paginate @items %>
+      </div>
+    </div>
+  </div>
+</div>

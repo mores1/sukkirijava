@@ -1,0 +1,109 @@
+<div class = "container">
+  <div class = "col-12">
+    <h3><mark class="bg-light">新規会員登録</mark></h3>
+
+    <div class="mt-5">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= render "public/shared/error_messages", resource: resource %>
+    <table class= "table table-borderless">
+      <thead>
+        <div class = "form-group row d-flex">
+          <div class="col-3 d-flex justify-content-between font-weight-bolder">
+            <p class="">名前</p>
+            <p class="mr-3"><%= f.label :"(姓)" %></p>
+          </div>
+          <div class="col-4 d-flex">
+            <%= f.text_field :last_name, placeholder: "令和", class:"col-10 form-control field_border" %>
+          </div>
+          <div class="col-4 d-flex justify-content-end font-weight-bolder">
+            <%= f.label :"(名)" %>
+            <%= f.text_field :first_name, placeholder: "道子", class:"col-10 form-control ml-4 field_border" %>
+          </div>
+        </div>
+        <div class = "form-group row d-flex">
+          <div class="col-3 d-flex justify-content-between font-weight-bolder">
+            <p>フリガナ</p>
+            <%= f.label :"(セイ)" %>
+          </div>
+          <div class="col-4">
+            <%= f.text_field :last_name_kana, placeholder: "レイワ", class:"col-10 form-control field_border" %>
+          </div>
+          <div class="col-4 d-flex justify-content-end font-weight-bolder">
+            <%= f.label "(メイ)" %>
+            <%= f.text_field :first_name_kana, placeholder: "ミチコ", class:"col-10 form-control ml-2 field_border" %>
+          </div>
+        </div>
+        <div class="form-group row d-flex">
+          <div class="col-3 font-weight-bolder">
+            <%= f.label :メールアドレス %>
+          </div>
+          <div class="col-4">
+            <%= f.text_field :email, placeholder: "sample@example.com", class:"col-10 form-control field_border" %>
+          </div>
+        </div>
+        <div class="form-group row d-flex">
+          <div class="col-3 font-weight-bolder">
+            <%= f.label :"郵便番号(ハイフンなし)" %>
+          </div>
+          <div class="col-4">
+            <%= f.text_field :postal_code, placeholder: "xxxxxxx", class: 'col-10 form-control field_border' %>
+          </div>
+        </div>
+        <div class="form-group row d-flex">
+          <div class="col-3 font-weight-bolder">
+            <%= f.label :住所 %>
+          </div>
+          <div class="col-8">
+            <%= f.text_field :address, placeholder: "東京都渋谷区代々木神園町0-0", class: 'col-12 form-control field_border' %>
+          </div>
+        </div>
+        <div class="form-group row d-flex">
+          <div class="col-3 font-weight-bolder">
+            <%= f.label :"電話番号(ハイフンなし)" %>
+          </div>
+          <div class="col-4">
+            <%= f.text_field :telephone_number, placeholder: "0000000000", class: 'col-10 form-control field_border' %>
+          </div>
+        </div>
+        <div class="form-group row d-flex">
+          <div class="col-3 d-flex font-weight-bolder">
+            <%= f.label :"パスワード" %>
+            <% if @minimum_password_length %>
+              <em>(<%= @minimum_password_length %> 文字以上)</em>
+            <% end %>
+          </div>
+          <div class="col-4">
+            <%= f.password_field :password, autocomplete: "new-password", class: "col-10 form-control field_border" %>
+          </div>
+        </div>
+        <div class="form-group row d-flex font-weight-bolder">
+          <div class="col-3">
+            <%= f.label :"パスワード(確認用)" %>
+          </div>
+          <div class="col-4">
+            <%= f.password_field :password_confirmation, autocomplete: "new-password",class: 'col-10 form-control field_border' %>
+          </div>
+        </div>
+        <div class="form-group row d-flex">
+          <div class="col-3"></div>
+          <div class="col-4">
+            <%= f.submit "新規登録",class: 'btn btn-sm btn-success col-9' %>
+          </div>
+        </div>
+      </thead>
+    </table>
+    <% end %>
+    </div>
+    <div class="row">
+      <h3><mark class="bg-light">既に登録済みの方</mark></h3>
+    </div>
+    <div class="row">
+      <div class="float-right col-9">
+        <%= link_to 'こちら', new_customer_session_path %>からログインしてください。
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

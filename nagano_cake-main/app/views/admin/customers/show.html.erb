@@ -1,0 +1,73 @@
+<div class = "container">
+  <div class = "row">
+  <div class="col-12 col-md-6">
+    <table class = "table table-borderless">
+      <h3><%= @customer.full_name %>さんの会員詳細</h3>
+      <thead>
+        <div>
+          <tr>
+            <td>会員ID</td>
+            <th><%= @customer.id %></th>
+          </tr>
+        </div>
+        <div>
+          <tr>
+            <td>氏名</td>
+            <th><%= @customer.last_name + "　" + @customer.first_name %></th>
+          </tr>
+        </div>
+        <div>
+          <tr>
+            <td>フリガナ></td>
+            <th><%= @customer.last_name_kana + " " + @customer.first_name_kana %></th>
+          </tr>
+        </div>
+        <div>
+          <tr>
+            <td>郵便番号</td>
+            <th><%= @customer.postal_code %></th>
+          </tr>
+        </div>
+        <div>
+          <tr>
+            <td>住所</td>
+            <th><%= @customer.address %></th>
+          </tr>
+        </div>
+        <div>
+          <tr>
+            <td>電話番号</td>
+            <th><%= @customer.telephone_number %></th>
+          </tr>
+        </div>
+        <div>
+          <tr>
+            <td>メールアドレス</td>
+            <th><%= @customer.email %></th>
+          </tr>
+        </div>
+        <div>
+          <tr>
+            <td>会員ステータス</td>
+            <th>
+              <% if @customer.is_deleted == false %>
+               <p class="text-success">有効</p>
+              <% else %>
+               <p class="text-danger">退会</p>
+              <% end %>
+            </th>
+          </tr>
+        </div>
+      </div>
+
+        <div>
+          <td>
+            <%= link_to "編集する", edit_admin_customer_path(@customer), class: "btn btn-success mr-5" %>
+            <%= link_to "注文履歴一覧を見る", admin_root_path, class: "btn btn-primary" %>
+          </td>
+        </div>
+
+      </thead>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+<% if genre.name == nil %>
+  <%= form_with model: genre, url: '/admin/genres', method: :post, local: true do |f|  %>
+  <div class="form-group row ml-3">
+    <div class="col-2 ml-5 font-weight-bold">
+     <%= f.label "ジャンル名" %>
+    </div>
+    <div class="col-2 mr-3">
+     <%= f.text_field :name, placeholder: "ジャンル名" %>
+    </div>
+    <div class="col-2 ml-5">
+     <%= f.submit "新規登録", class: "btn btn-success" %>
+    </div>
+  </div>
+  <% end %>
+<% else %>
+  <%= form_with model: genre, url: admin_genre_path(genre), method: :patch, local: true do |f|  %>
+   <div class="form-group row font-weight-bold">
+     <%= f.label "ジャンル名" %>
+     <div class="col-2 ml-5 mr-3">
+      <%= f.text_field :name %>
+     </div>
+     <div class="col-2 ml-5">
+      <%= f.submit "変更を保存", class: "btn btn-success" %>
+     </div>
+    </div>
+  <% end %>
+<% end %>

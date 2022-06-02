@@ -1,0 +1,42 @@
+<div class = "container">
+  <div class="col-12">
+    <h3><mark class="bg-light">ログイン</mark></h3>
+    <h5 class="mt-5 font-weight-bolder"><mark class="bg-light">会員の方はこちらからログイン</mark></h5>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <table class="table table-borderless">
+      <div class="form-group row d-flex mt-4">
+        <div class="col-4 text-center font-weight-bolder">
+          <div class="ml-4">
+            <%= f.label :"メールアドレス"%>
+          </div>
+        </div>
+        <div class="col-5">
+          <%= f.email_field :email, placeholder: "sample@example.com", class:"form-control field_border" %>
+        </div>
+       </div>
+      <div class="form-group row d-flex mt-4">
+        <div class="col-4 text-center font-weight-bolder">
+          <%= f.label :"パスワード" %>
+        </div>
+        <div class="col-5">
+          <%= f.password_field :password, class:"form-control field_border" %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4"></div>
+        <div class="col-5">
+          <%= f.submit "ログイン", class:"col-6 btn btn-primary field_border" %>
+        </div>
+      </div>
+    </table>
+    <% end %>
+    <div class="row">
+      <h5 class="ml-3 font-weight-bolder"><mark class="bg-light"></mark>会員登録がお済みでない方</h5>
+    </div>
+    <div class="row">
+      <div class="ml-5 m">
+        <%= link_to "こちら", new_customer_registration_path %>から新規登録を行ってください。
+      </div>
+    </div>
+  </div>
+</div>
