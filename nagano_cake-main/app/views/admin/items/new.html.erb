@@ -1,0 +1,13 @@
+<div class="container">
+  <h3><mark class="bg-light">商品新規登録</mark></h3>
+  <div class="row justify-content-center">
+    <div class="col-8">
+      <%= form_with(model: [ :admin, @item ]) do |f| %>
+       <%= render 'item', f: f %>
+      <div class="form-group row justify-content-center">
+        <%= f.submit "新規登録", class: 'btn btn-success' %>
+      </div>
+    　<% end %>
+    </div>
+  </div>
+</div>

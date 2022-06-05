@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>NaganoCake</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <% if current_customer == nil && current_admin == nil %>
+      <%= render 'layouts/guest_header' %>
+    <% elsif current_customer == nil && current_admin.present? %>
+      <%= render 'layouts/admin_header' %>
+    <% else current_customer == true && current_admin == nill %>
+      <%= render 'layouts/customer_header' %>
+    <% end %>
+    <%= yield %>
+    <%= render 'layouts/footer'%>
+  </body>
+</html>

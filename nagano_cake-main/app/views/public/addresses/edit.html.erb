@@ -1,0 +1,32 @@
+<div class = "container">
+  <div class = "col-12 col-md-8" >
+    <h3><mark class="bg-light">配送先編集</mark></h3>
+    <%= form_with model: @address, url: address_path(@address.id), method: :patch do |f| %>
+      <table class = "table table-borderless" >
+        <thead>
+          <div class = "form-group row font-weight-bold" >
+            <%= f.label "郵便番号(ハイフンなし)", class:"mr-0 col-sm-4 col-form-label" %>
+            <div class = "col-sm-4" >
+              <%= f.text_field :postal_code, class:"form-control field_border" %>
+            </div>
+          </div>
+          <div class= "form-group row font-weight-bold" >
+            <%= f.label "住所", class:"mr-0 col-sm-4 col-form-label" %>
+            <div class = "col-md-8" >
+              <%= f.text_field :address, class:"form-control field_border" %>
+            </div>
+          </div>
+          <div class = "form-group row font-weight-bold" >
+            <%= f.label "宛名", class:"mr-0 col-sm-4 col-form-label" %>
+            <div class = "col-md-4" >
+              <%= f.text_field :name, class:"form-control field_border" %>
+            </div>
+            <div class = "justify-content-end">
+            <%= f.submit "変更内容を保存",  class: 'btn btn-success' %>
+            </div>
+          </div>
+        </thead>
+      </table>
+    <% end %>
+  </div>
+</div>

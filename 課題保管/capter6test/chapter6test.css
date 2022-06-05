@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.haru {
+  background-size: cover;
+  background-position: center;
+  height: 200px;
+  background-image: url("C:/Users/fmsk/OneDrive/デスクトップ/capter6test/img/box1.jpg");
+}
+
+.natu {
+  background-size: cover;
+  background-position: center;
+  height: 200px;
+  background-image: url("C:/Users/fmsk/OneDrive/デスクトップ/capter6test/img/box2.jpg");
+}
+
+.aki {
+  background-size: cover;
+  background-position: center;
+  height: 200px;
+  background-image: url("C:/Users/fmsk/OneDrive/デスクトップ/capter6test/img/box3.jpg");
+}
+
+.fuyu {
+  background-size: cover;
+  background-position: center;
+  height: 200px;
+  background-image: url("C:/Users/fmsk/OneDrive/デスクトップ/capter6test/img/box4.jpg");
+}

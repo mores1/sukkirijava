@@ -1,0 +1,57 @@
+
+<div class = "container">
+  <div class="col-12 col-md-8">
+    <%= form_with model: @customer, url: customers_path, method: :patch do |f| %>
+    <table class = "table table-borderless">
+      <h4><mark class="bg-light">会員情報編集</mark></h4>
+      <thead>
+        <div class="form-group row">
+          <%= f.label :氏名, class:"col-sm-3 col-form-label" %>
+          <div class="col-md-3">
+            <%= f.text_field :last_name, class:"form-control field_border" %>
+          </div>
+          <div class="col-md-3">
+            <%= f.text_field :first_name, class:"form-control field_border" %>
+          </div>
+        </div>
+        <div class="form-group row">
+          <%= f.label :フリガナ, class:"col-sm-3 col-form-label" %>
+          <div class="col-md-3">
+            <%= f.text_field :last_name_kana, class:"form-control field_border" %>
+          </div>
+          <div class="col-md-3">
+            <%= f.text_field :first_name_kana, class:"form-control field_border" %>
+          </div>
+        </div>
+        
+        <div class="form-group row">
+          <%= f.label :住所, class:"col-sm-3 col-form-label" %>
+          <div class="col-md-9">
+            <%= f.text_field :address, class: 'form-control field_border' %>
+          </div>
+        </div>
+        <div class="form-group row">
+          <%= f.label :電話番号, class:"col-sm-3 col-form-label" %>
+          <div class="col-md-3">
+            <%= f.text_field :telephone_number, class: 'form-control field_border' %>
+          </div>
+        </div>
+        <div class="form-group row">
+          <%= f.label :メールアドレス, class:"col-sm-3 col-form-label" %>
+          <div class="col-md-3">
+            <%= f.text_field :email, class: 'form-control field_border' %>
+          </div>
+        </div>
+        <div class="form-group row">
+         <div class="col-md-3 offset-3">
+          <%= f.submit "変更内容を保存", class:"btn btn-success btn-block btn-sm" %>
+         </div>
+         <div class="col-md-3 offset-2">
+          <%= link_to "退会する", unsubscribe_customers_path, class:"btn btn-danger btn-block btn-sm"%>
+         </div>
+        </div>
+      </thead>
+    </table>
+    <% end %>
+  </div>
+</div>

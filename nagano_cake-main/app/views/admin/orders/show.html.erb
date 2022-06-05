@@ -1,0 +1,100 @@
+  <div class="container">
+    <div class="col-12">
+      <h3>注文履歴詳細</h3>
+
+      <table class="table table-borderless">
+        <tbody>
+          <tr>
+            <th class="w-25">購入者</th>
+            <td>
+              <%= link_to admin_customer_path(@customer) do %>
+                <%= @customer.full_name %>
+              <% end %>
+            </td>
+          </tr>
+          <tr>
+            <th>注文日</th>
+            <td>
+              <%= @order.created_at.strftime('%Y/%m/%d') %>
+            </td>
+          </tr>
+          <tr>
+            <th>配送先</th>
+            <td>
+              〒<%= @order.postal_code.to_s.insert(3, "-") + " " + @order.address %><br>
+              <%= @order.name %>
+            </td>
+          </tr>
+          <tr>
+            <th>支払方法</th>
+            <td><%= @order.payment_method_i18n %></td>
+          </tr>
+          <tr>
+            <th>注文ステータス</th>
+
+            <td class="align-content-center">
+              <%= form_with model: [:admin, @order], method: :patch, local: true do |f| %>
+              <%= f.select :status, options_for_select(Order.statuses_i18n.invert, selected: @order.status), class: "form-control" %>
+              <%= f.submit "更新", class:"btn btn-sm btn-success ml-3" %>
+              <% end %>
+            </td>
+
+          </tr>
+        </tbody>
+    </table>
+
+    <div class="d-flex align-items-end">
+      <div>
+      <table class="table">
+        <thead>
+          <tr class="table-secondary">
+            <th>商品名</th>
+            <th>単価（税込）</th>
+            <th>数量</th>
+            <th>小計</th>
+            <th>製作ステータス</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @order_details.each do |order_detail| %>
+          <tr>
+            <td class="text-center"><%= order_detail.item.name %></td>
+            <td class="text-center"><%= order_detail.price.to_s(:delimited) %></td>
+            <td class="text-center"><%= order_detail.amount %></td>
+            <td class="text-center"><%= (order_detail.price * order_detail.amount).to_s(:delimited) %></td>
+
+            <td>
+              <%= form_with model:  [:admin, order_detail], method: :patch, local: true do  |f| %>
+                <%= f.select :making_status, options_for_select(OrderDetail.making_statuses_i18n.invert, selected: order_detail.making_status) %>
+                <%= f.submit "更新", class:"btn btn-sm btn-success ml-3" %>
+              <% end %>
+            </td>
+
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+      </div>
+
+      <div class="ml-5">
+        <table class="table table-borderless">
+          <tbody>
+            <tr>
+              <th>商品合計</th>
+              <td class="float-right"><%= @order.total_product_price.to_s(:delimited) %>円</td>
+            </tr>
+            <tr>
+              <th>送料</th>
+              <td class="float-right"><%= @order.shipping_cost %>円</td>
+            </tr>
+            <tr>
+              <th>請求額合計</th>
+              <th class="float-right"><%= @order.total_payment.to_s(:delimited) %>円</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
