@@ -1,9 +1,8 @@
-puts "求めたい数字を入力して下さい"
-puts "１つ目の数字"
+puts "整数1"
 a = gets.to_i
-puts "２つ目の数字"
+puts "整数2"
 b = gets.to_i
-puts "３つ目の数字"
+puts "整数3"
 c = gets.to_i
 puts "何番目の数字を求めますか？"
 t = gets.to_i
